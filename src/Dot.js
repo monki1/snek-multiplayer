@@ -8,7 +8,7 @@ class Dot {
   }
 
   isAt(pos) {
-    return(pos.x === this.x && pos.y === this.y)
+    return (pos.x === this.x && pos.y === this.y)
   }
 }
 

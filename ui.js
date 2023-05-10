@@ -39,9 +39,9 @@ const handleManualInput = function() {
   });
 }
 
-const handleUserInput = function( key ) {
+const handleUserInput = function(key) {
   if (!commandMode) return;
-  if ( key === '\u0003' ) {
+  if (key === '\u0003') {
     // ctrl-c ( end of text )
     process.exit();
   } else if (key === 'w' || key === 'a' || key === 's' || key === 'd') {
@@ -57,6 +57,6 @@ const run = function(connection) {
   const stdin = beginCommandMode();
   conn = connection;
   stdin.on('data', handleUserInput);
-} 
+}
 
 module.exports = { run };

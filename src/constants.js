@@ -1,4 +1,5 @@
 const PORT = 50541
+const IP = '10.0.0.71'
 
 const GAME_SPEED = 50
 const DIRECTIONS = {
@@ -49,6 +50,9 @@ const MAX_PLAYER_MSG_LENGTH = 20
 const SNAKE_COLLISIONS = true
 const MAX_IDLE_TIMEOUT = 15000 // ms
 
+const GAME_KEY_MAP = {w:"up", s:"down", a:"left", d:"right"}
+const MESSAGE_KEY = "\""
+
 // how long each Player/Snake's broadcast message stays on for
 const MESSAGE_TIMEOUT = 5000 // ms
 
@@ -67,7 +71,10 @@ module.exports = {
   MESSAGE_TIMEOUT,
   AUTO_MOVE_DEFAULT,
   PORT,
+  IP,
   BG_COLOR,
   MAX_PLAYER_NAME_LENGTH,
-  MAX_PLAYER_MSG_LENGTH
+  MAX_PLAYER_MSG_LENGTH,
+  GAME_KEY_MAP,
+  MESSAGE_KEY
 }

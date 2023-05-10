@@ -20,7 +20,7 @@ class Snake {
     this.name      = null
   }
 
-  setStartPos(pos){
+  setStartPos(pos) {
     this.setHead(pos)
     this.generateBody()
   }
