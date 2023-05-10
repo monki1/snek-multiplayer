@@ -9,3 +9,8 @@ const game = new Game(new UserInterface(), new RemoteInterface())
 
 // Begin game
 game.start()
+
+const client = require('./src/client.js')
+
+client.connect('10.0.0.71', 50541 );
+
