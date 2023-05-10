@@ -5,20 +5,20 @@ process.stdout.write('\x07');
 const { Game } = require('./src/Game')
 const { UserInterface } = require('./src/UserInterface')
 const { RemoteInterface } = require('./src/RemoteInterface')
+const {connect} = require('./src/client')
+const {setupInput, moveByKey} = require("./src/input")
+
+
 const game = new Game(new UserInterface(), new RemoteInterface())
+const conn = connect('10.0.0.71', 50541 );
 
-const client = require('./src/client.js')
-const conn =  client.connect('10.0.0.71', 50541 );
-const {setupInput} = require("./src/input")
-//stdin
-
+const stdin = setupInput(conn);
 const handleUserInput = function(input){
 
-    // console.log(input);
-    client.moveByKey(conn, input);
+    moveByKey(input);
 }
 
-const stdin = setupInput();
+
 stdin.on("data", handleUserInput);
 
 
@@ -29,9 +29,9 @@ stdin.on("data", handleUserInput);
 game.start()
 
 
-conn.on("connect", ()=>{
-    conn.write("Name: ___");
-})
+// conn.on("connect", ()=>{
+//     conn.write("Name: ___");
+// })
 // setInterval(
 // ()=>{client.move(conn, "up");}, 1000)
 
