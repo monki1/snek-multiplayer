@@ -13,13 +13,17 @@ const connect = function (ip, port) {
   return conn;
 };
 
-const actions = ["up", "down", "left", "right"]
+const keyMap = {"w":"up", "s":"down", "a":"left", "d":"right"}
 
 const messagefy = function(action){return "Move: "+action}
 const move = (conn, action)=>{
     conn.write(messagefy(action));
 }
+const moveByKey = function(conn, key){
+    console.log(key, keyMap[key])
+    move(conn, keyMap[key]);
+}
 
 
 // console.log("Connecting ...");
-module.exports = {connect:connect, move: move}
+module.exports = {connect:connect, move: move, moveByKey}
