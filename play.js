@@ -6,7 +6,7 @@ const { Game } = require('./src/Game')
 const { UserInterface } = require('./src/UserInterface')
 const { RemoteInterface } = require('./src/RemoteInterface')
 const {connect} = require('./src/client')
-const {setupInput, moveByKey} = require("./src/input")
+const {setupInput, takeInput} = require("./src/input")
 
 
 const game = new Game(new UserInterface(), new RemoteInterface())
@@ -15,7 +15,7 @@ const conn = connect('10.0.0.71', 50541 );
 const stdin = setupInput(conn);
 const handleUserInput = function(input){
 
-    moveByKey(input);
+    takeInput(input);
 }
 
 
