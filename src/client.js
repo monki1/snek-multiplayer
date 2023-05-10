@@ -13,5 +13,13 @@ const connect = function (ip, port) {
   return conn;
 };
 
-console.log("Connecting ...");
-module.exports = {connect:connect}
+const actions = ["up", "down", "left", "right"]
+
+const messagefy = function(action){return "Move: "+action}
+const move = (conn, action)=>{
+    conn.write(messagefy(action));
+}
+
+
+// console.log("Connecting ...");
+module.exports = {connect:connect, move: move}
