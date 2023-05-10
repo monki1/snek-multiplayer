@@ -9,14 +9,9 @@ const game = new Game(new UserInterface(), new RemoteInterface())
 
 const client = require('./src/client.js')
 const conn =  client.connect('10.0.0.71', 50541 );
+const {setupInput} = require("./src/input")
 //stdin
-const setupInput = function () {
-    const stdin = process.stdin;
-    stdin.setRawMode(true);
-    stdin.setEncoding("utf8");
-    stdin.resume();
-    return stdin;
-};
+
 const handleUserInput = function(input){
 
     // console.log(input);
