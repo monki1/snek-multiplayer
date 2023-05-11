@@ -1,5 +1,8 @@
 const PORT = 50541
-const IP = '10.0.0.71'
+const IP = 
+// '165.227.47.243'
+'10.0.0.71'
+
 
 const GAME_SPEED = 50
 const DIRECTIONS = {

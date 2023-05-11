@@ -1,4 +1,4 @@
-const {GAME_KEY_MAP, MESSAGE_KEY} = require("./constants")
+const {GAME_KEY_MAP, MESSAGE_KEY} = require("../constants")
 const moveMessage = function(action) {
   return "Move: " + action
 }

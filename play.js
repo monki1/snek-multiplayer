@@ -5,8 +5,8 @@ process.stdout.write('\x07');
 const { Game } = require('./src/Game')
 const { UserInterface } = require('./src/UserInterface')
 const { RemoteInterface } = require('./src/RemoteInterface')
-const {connect} = require('./src/client')
-const {setupInput, takeInput} = require("./src/input")
+const {connect} = require('./src/client/client')
+const {setupInput, takeInput} = require("./src/client/input")
 const {IP, PORT} = require("./src/constants")
 
 

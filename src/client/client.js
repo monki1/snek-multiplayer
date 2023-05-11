@@ -13,8 +13,5 @@ const connect = function(ip, port) {
   return conn;
 };
 
-
-
-
 // console.log("Connecting ...");
 module.exports = {connect:connect}
