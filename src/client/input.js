@@ -7,7 +7,9 @@ const move = (action)=>{
 }
 const moveByKey = function(key) {
 //   console.log(key, GAME_KEY_MAP[key])
-  move(GAME_KEY_MAP[key]);
+    if(GAME_KEY_MAP.keys.includes(key)){
+    move(GAME_KEY_MAP[key]);
+    }
 }
 let message = ""
 const typeMessage = function(key) {
